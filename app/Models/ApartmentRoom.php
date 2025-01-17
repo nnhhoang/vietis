@@ -11,9 +11,9 @@ class ApartmentRoom extends Model
 
     protected $fillable = ['apartment_id', 'room_number', 'price', 'occupants', 'image'];
 
-    public function apartment()
+    public function rents()
     {
-        return $this->belongsTo(Apartment::class);
+        return $this->hasMany(MonthlyRent::class);
     }
 }
 
